@@ -1,0 +1,10 @@
+body{
+	margin: 0;
+}
+canvas{
+	-webkit-transform3d: translate(0,0,0);
+	-moz-transform3d: translate(0,0,0);
+	transform3d: translate(0,0,0);
+
+	border: solid 1px;
+}
