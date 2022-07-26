@@ -6,7 +6,8 @@ const ctx = canvas.getContext("2d");
 const img = new Image();
 file.addEventListener("change", (e)=> {
 	let image = e.target.files[0];
-	main(image.name);
+	encodeImageFileAsURL(image);
+	
 
 	e.target.value = '';
 });
@@ -18,9 +19,20 @@ function draw(pos) {
 	ctx.drawImage(img, pos.x, pos.y, pos.w, pos.h);
 }
 
+
+function encodeImageFileAsURL(f) {
+  var file = f;
+  var reader = new FileReader();
+  reader.onloadend = function() {
+    main(reader.result);
+  }
+  reader.readAsDataURL(file);
+}
 let ipos = {x:0, y:0, w:null, h:null};
 function main(imgs) {
 	if (!imgs) return 0;
+
+
 
 	img.src = imgs;
 
