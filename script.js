@@ -62,28 +62,28 @@ canvas.addEventListener("wheel", (e)=> {
 
 
 	if (mpos.x < center.x && mpos.y < center.y) {
-		ipos.x = ipos.x;
-		ipos.y = ipos.y;
+		ipos.x = ipos.x-scale/10;
+		ipos.y = ipos.y-scale/10;
 		ipos.w = ipos.w+(scale*2);
 		ipos.h = ipos.h+(scale*2);
 	}
 	if (mpos.x > center.x && mpos.y < center.y) {
 		ipos.x = ipos.x-scale;
-		ipos.y = ipos.y;
-		ipos.w = ipos.w+scale;
+		ipos.y = ipos.y-scale/10;
+		ipos.w = ipos.w+(scale*1.2);
 		ipos.h = ipos.h+(scale*2);
 	}
 	if (mpos.x > center.x && mpos.y > center.y) {
 		ipos.x = ipos.x-scale;
 		ipos.y = ipos.y-scale;
-		ipos.w = ipos.w+scale;
-		ipos.h = ipos.h+scale;
+		ipos.w = ipos.w+(scale*1.2);
+		ipos.h = ipos.h+(scale*1.2);
 	}
 	if (mpos.x < center.x && mpos.y > center.y) {
-		ipos.x = ipos.x;
+		ipos.x = ipos.x-scale/10;
 		ipos.y = ipos.y-scale;
 		ipos.w = ipos.w+(scale*2);
-		ipos.h = ipos.h+scale;
+		ipos.h = ipos.h+(scale*1.2);
 	}
 	draw(ipos);
 });
